@@ -22,7 +22,11 @@ h2 {
     padding-left: 1rem;
 }
 
-.text {
+label {
+  width: 17rem;
+}
+
+#text {
     height: 2rem;
     width: 70%;
     margin-left: 0.5rem;
@@ -30,7 +34,7 @@ h2 {
     border: 2px solid black;
 }
 
-.text:hover{
+#text:hover{
     border-width: 3px;
  }
 
@@ -46,7 +50,7 @@ h2 {
     border-width: 3px;
  }
 
-.list{
+#list{
     margin: auto;
     padding: 0;
     list-style-type: none;
@@ -150,3 +154,4 @@ li:hover{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
