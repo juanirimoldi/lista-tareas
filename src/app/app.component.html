@@ -11,53 +11,54 @@
         <h2>LISTA DE TAREAS DE JUANI</h2>
       </header>
       <div class="input">
-        <input type="text" class="text"/>
-        <input type="button" class="addBtn" value="ADD"/> 
+        <input type="text" id="text"/>
+        <button onclick="createTask()" class="addBtn"> ADD</button>
       </div>
       
-      <ol class="list">
+      <ol id="list">
         <li>
-          <input type="image" class="deleteIcon" src="/assets/images/trash-can-regular.svg"/>
+          <input type="image"  class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
           <label class="container">Task N
-            <input type="checkbox"/>
-            <span class="checkmark"></span>
+            <input onclick="completeTask(event)" type="checkbox"/>
+            <span class="checkmark""></span>
           </label>
         </li>
         <li>
-          <input type="image" class="deleteIcon" src="/assets/images/trash-can-regular.svg"/>
+          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
           <label class="container">Task N-1
-            <input type="checkbox"/>
+            <input onclick="completeTask(event)" type="checkbox"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li class="completed">
-          <input type="image" class="deleteIcon" src="/assets/images/trash-can-regular.svg"/>
+          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
           <label class="container">Completed Task N-2
-            <input type="checkbox" checked="checked"/>
+            <input onclick="completeTask(event)" type="checkbox" checked="checked"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li>
-          <input type="image" class="deleteIcon" src="/assets/images/trash-can-regular.svg"/>
+          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
           <label class="container">Task K
-            <input type="checkbox"/>
+            <input onclick="completeTask(event)" type="checkbox"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li>
-          <input type="image" class="deleteIcon" src="/assets/images/trash-can-regular.svg"/>
+          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
           <label class="container">Task 2
-            <input type="checkbox"/>
+            <input onclick="completeTask(event)" type="checkbox"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li class="completed">
-          <input type="image" class="deleteIcon" src="/assets/images/trash-can-regular.svg"/>
+          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
           <label class="container">Completed Task 1
-            <input type="checkbox" checked="checked"/>
+            <input onclick="completeTask(event)" type="checkbox" checked="checked"/>
             <span class="checkmark"></span>
           </label>
         </li>
       </ol>
+      <script src="app.component.ts"></script>
   </body>
 </html>
