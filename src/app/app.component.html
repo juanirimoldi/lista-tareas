@@ -3,58 +3,67 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/src/assets/images/to-do-list.png">
     <title>Lista de Tareas</title>
     <link href="app.component.scss" rel="stylesheet" type="text/css" />
   </head>
   <body>
       <header>
-        <h2>LISTA DE TAREAS DE JUANI</h2>
+        <h2>LISTA DE TAREAS DE {{nombre}}</h2>
       </header>
       <div class="input">
-        <input type="text" id="text"/>
-        <button onclick="createTask()" class="addBtn"> ADD</button>
+        <input #text type="text" id="text" (keydown.enter)="createTask(text.value); text.value=''" />
+        <button (click)="createTask(text.value); text.value=''" class="addBtn"> ADD</button>
       </div>
       
       <ol id="list">
+        <li *ngFor="let task of tasks.reverse()">
+          <input type="image"  class="deleteIcon" src="{{urltrash}}" (click)="deleteTask($event)"/>
+          <label class="container">{{task}}
+            <input (click)="completeTask($event)" type="checkbox"/>
+            <span class="checkmark"></span>
+          </label>
+        </li>
+
         <li>
-          <input type="image"  class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
+          <input type="image"  class="deleteIcon" src="{{urltrash}}" (click)="deleteTask($event)"/>
           <label class="container">Task N
-            <input onclick="completeTask(event)" type="checkbox"/>
-            <span class="checkmark""></span>
+            <input (click)="completeTask($event)" type="checkbox"/>
+            <span class="checkmark"></span>
           </label>
         </li>
         <li>
-          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
+          <input type="image" class="deleteIcon" src="{{urltrash}}" (click)="deleteTask($event)"/>
           <label class="container">Task N-1
-            <input onclick="completeTask(event)" type="checkbox"/>
+            <input (click)="completeTask($event)" type="checkbox"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li class="completed">
-          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
+          <input type="image" class="deleteIcon" src="{{urltrash}}" (click)="deleteTask($event)"/>
           <label class="container">Completed Task N-2
-            <input onclick="completeTask(event)" type="checkbox" checked="checked"/>
+            <input (click)="completeTask($event)" type="checkbox" checked="checked"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li>
-          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
+          <input type="image" class="deleteIcon" src="{{urltrash}}" (click)="deleteTask($event)"/>
           <label class="container">Task K
-            <input onclick="completeTask(event)" type="checkbox"/>
+            <input (click)="completeTask($event)" type="checkbox"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li>
-          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
+          <input type="image" class="deleteIcon" src="{{urltrash}}" (click)="deleteTask($event)"/>
           <label class="container">Task 2
-            <input onclick="completeTask(event)" type="checkbox"/>
+            <input (click)="completeTask($event)" type="checkbox"/>
             <span class="checkmark"></span>
           </label>
         </li>
         <li class="completed">
-          <input type="image" class="deleteIcon" src="https://freesvg.org/img/trash.png" onclick="deleteTask(event)"/>
+          <input type="image" class="deleteIcon" src="{{urltrash}}" (click)="deleteTask($event)"/>
           <label class="container">Completed Task 1
-            <input onclick="completeTask(event)" type="checkbox" checked="checked"/>
+            <input (click)="completeTask($event)" type="checkbox" checked="checked"/>
             <span class="checkmark"></span>
           </label>
         </li>
